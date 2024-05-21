@@ -584,24 +584,121 @@
                 </svg>
               </div>
             </a>
+            <section class="subscribe_section">
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: baseline;
+                "
+              >
+                <h4>SUBSCRIBE TO THE NEWSLETTER</h4>
+                <form name="subscribe_form">
+                  <div style="display: flex; align-items: baseline">
+                    <input
+                      name="usermail"
+                      type="email"
+                      class="subscribe-form_input"
+                      placeholder="E-mail"
+                      style="background-color: #2f303a"
+                    />
+                    <button
+                      type="submit"
+                      class="subscribe-form__btn"
+                      style="height: 40px; display: flex; align-items: center"
+                    >
+                      Subscribe
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        height="24"
+                        style="margin-left: 8px"
+                      >
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path
+                          d="M2.01 21L23 12 2.01 3v7l15 2-15 2z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </section>
           </div>
         </div>
       </div>
     </footer>
+    <!-- Trigger Button -->
+    <button data-modal-open>Open Modal</button>
+
     <!-- Modal -->
-    <div data-modal class="modal__backdrop is-hidden">
+    <div class="modal__backdrop is-hidden" data-modal>
       <div class="modal">
         <button
           type="button"
-          data-modal-close
           class="modal__close-btn flex center"
+          data-modal-close
         >
           <svg class="modal__close-icon">
-            <use href="./images/icons/close-icon.svg#close-icon"></use>
+            <use href="#close-icon"></use>
           </svg>
         </button>
+        <form class="modal__form">
+          <h2>Leave your information and we'll call you back</h2>
+          <label>
+            <span>Name</span>
+            <div class="input-container">
+              <i class="fas fa-user"></i>
+              <input type="text" name="name" required />
+            </div>
+          </label>
+          <label>
+            <span>Telephone</span>
+            <div class="input-container">
+              <i class="fas fa-phone"></i>
+              <input type="tel" name="telephone" required />
+            </div>
+          </label>
+          <label>
+            <span>E-mail</span>
+            <div class="input-container">
+              <i class="fas fa-envelope"></i>
+              <input type="email" name="email" required />
+            </div>
+          </label>
+          <label>
+            <span>Comments</span>
+            <div class="input-container">
+              <i class="fas fa-comment"></i>
+              <textarea
+                name="comments"
+                class="centered-textarea"
+                required
+              ></textarea>
+            </div>
+          </label>
+
+          <label>
+            <input type="checkbox" name="terms" required />
+            <span
+              >I agree with the letter and accept the
+              <a href="#">Terms and Conditions</a></span
+            >
+          </label>
+          <button type="submit">Send</button>
+        </form>
       </div>
     </div>
-    <script src="./modal.js"></script>
+
+    <!-- SVG Definitions -->
+    <svg style="display: none">
+      <symbol id="close-icon" viewBox="0 0 24 24">
+        <path d="M18 6L6 18M6 6l12 12"></path>
+      </symbol>
+    </svg>
+
+    <script src="modal.js"></script>
   </body>
 </html>
